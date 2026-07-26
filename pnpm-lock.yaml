@@ -7,16 +7,10 @@ settings:
 importers:
 
   .:
-    devDependencies:
-      turbo:
-        specifier: ^2.3.3
-        version: 2.10.7
-
-  apps/api:
     dependencies:
       '@repo/shared':
         specifier: workspace:*
-        version: link:../../packages/shared
+        version: link:packages/shared
       express:
         specifier: ^4.21.1
         version: 4.22.2
@@ -33,12 +27,9 @@ importers:
       '@types/node':
         specifier: ^22.7.5
         version: 22.20.1
-      tsx:
-        specifier: ^4.19.1
-        version: 4.23.1
-      typescript:
-        specifier: ^5.6.3
-        version: 5.9.3
+      turbo:
+        specifier: ^2.3.3
+        version: 2.10.7
 
   apps/landing:
     dependencies:
@@ -7651,6 +7642,7 @@ snapshots:
       esbuild: 0.28.1
     optionalDependencies:
       fsevents: 2.3.3
+    optional: true
 
   turbo@2.10.7:
     optionalDependencies:
