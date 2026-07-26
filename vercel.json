@@ -1,24 +1,29 @@
 {
-  "build": {
-    "cmd": "pnpm turbo run build",
-    "outputDirectory": "."
-  },
-  "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "/apps/api/src/index.ts"
-    },
-    {
-      "source": "/nuxt/:path*",
-      "destination": "/apps/nuxt-site/.output/public/:path*"
-    },
-    {
-      "source": "/vue/:path*",
-      "destination": "/apps/vue-spa/dist/:path*"
-    },
-    {
-      "source": "/",
-      "destination": "/apps/landing/index.html"
-    }
-  ]
+	"buildCommand": "pnpm turbo run build",
+	"outputDirectory": ".",
+	"installCommand": "pnpm install --no-frozen-lockfile",
+	"framework": null,
+	"rewrites": [
+		{
+			"source": "/api/:path*",
+			"destination": "/apps/api/src/index.ts"
+		},
+		{
+			"source": "/nuxt/:path*",
+			"destination": "/apps/nuxt-site/.output/public/:path*"
+		},
+		{
+			"source": "/vue/:path*",
+			"destination": "/apps/vue-spa/dist/:path*"
+		},
+		{
+			"source": "/",
+			"destination": "/apps/landing/index.html"
+		}
+	],
+	"functions": {
+		"apps/api/src/index.ts": {
+			"runtime": "@vercel/node@3"
+		}
+	}
 }
