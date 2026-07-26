@@ -1,0 +1,12 @@
+{
+	"name": "@repo/landing",
+	"private": true,
+	"scripts": {
+		"dev": "node server.js",
+		"build": "echo landing is static, no build needed"
+	},
+	"dependencies": {
+		"express": "^4.21.1",
+		"http-proxy-middleware": "^3.0.3"
+	}
+}

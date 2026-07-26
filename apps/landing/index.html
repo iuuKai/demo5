@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Monorepo 项目导航</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				font-family:
+					-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+				background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+				min-height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 20px;
+			}
+			.container {
+				text-align: center;
+				color: #fff;
+			}
+			h1 {
+				font-size: 2.5rem;
+				margin-bottom: 12px;
+				font-weight: 700;
+			}
+			.subtitle {
+				font-size: 1.1rem;
+				opacity: 0.9;
+				margin-bottom: 48px;
+			}
+			.cards {
+				display: flex;
+				gap: 24px;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+			.card {
+				background: #fff;
+				border-radius: 16px;
+				padding: 36px 32px;
+				width: 260px;
+				text-decoration: none;
+				color: #333;
+				box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+				transition:
+					transform 0.25s ease,
+					box-shadow 0.25s ease;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 12px;
+			}
+			.card:hover {
+				transform: translateY(-6px);
+				box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+			}
+			.card-icon {
+				font-size: 3rem;
+				margin-bottom: 8px;
+			}
+			.card-title {
+				font-size: 1.4rem;
+				font-weight: 600;
+			}
+			.card-desc {
+				font-size: 0.95rem;
+				color: #666;
+			}
+			.card-badge {
+				display: inline-block;
+				margin-top: 8px;
+				padding: 4px 12px;
+				border-radius: 999px;
+				background: #f0f0ff;
+				color: #667eea;
+				font-size: 0.85rem;
+				font-weight: 500;
+			}
+			.footer {
+				margin-top: 48px;
+				font-size: 0.9rem;
+				opacity: 0.8;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>🚀 Monorepo 演示站</h1>
+			<p class="subtitle">基于 Turbo + pnpm workspace 的多应用单域部署</p>
+
+			<div class="cards" id="cards">
+				<a class="card" href="/vue" target="_blank">
+					<div class="card-icon">⚡</div>
+					<div class="card-title">Vue3 SPA</div>
+					<div class="card-desc">Vite + Vue3 + TypeScript</div>
+					<span class="card-badge">/vue</span>
+				</a>
+				<a class="card" href="/nuxt" target="_blank">
+					<div class="card-icon">🌿</div>
+					<div class="card-title">Nuxt3 SSG</div>
+					<div class="card-desc">Nuxt3 静态站点生成</div>
+					<span class="card-badge">/nuxt</span>
+				</a>
+				<a class="card" href="/api/users" target="_blank">
+					<div class="card-icon">🔌</div>
+					<div class="card-title">API 接口</div>
+					<div class="card-desc">Express + MockJS</div>
+					<span class="card-badge">/api/users</span>
+				</a>
+			</div>
+
+			<div class="footer" id="footer"></div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+		<script>
+			$(function () {
+				var year = new Date().getFullYear()
+				$('#footer').text('© ' + year + ' Monorepo Demo · Powered by Turbo + Vercel')
+
+				$('.card')
+					.on('mouseenter', function () {
+						$(this).css('background', '#fafaff')
+					})
+					.on('mouseleave', function () {
+						$(this).css('background', '#fff')
+					})
+			})
+		</script>
+	</body>
+</html>

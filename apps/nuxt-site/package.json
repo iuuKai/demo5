@@ -1,0 +1,15 @@
+{
+  "name": "@repo/nuxt-site",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt generate",
+    "lint": "nuxt lint"
+  },
+  "dependencies": {
+    "@repo/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "nuxt": "^3.13.0"
+  }
+}
