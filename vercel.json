@@ -5,7 +5,7 @@
 	"framework": null,
 	"rewrites": [
 		{
-			"source": "/nuxt",
+			"source": "/nuxt(/?)",
 			"destination": "/apps/nuxt-site/.output/public/index.html"
 		},
 		{
