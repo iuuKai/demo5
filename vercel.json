@@ -5,6 +5,10 @@
 	"framework": null,
 	"rewrites": [
 		{
+			"source": "/nuxt",
+			"destination": "/apps/nuxt-site/.output/public/index.html"
+		},
+		{
 			"source": "/nuxt/:path*",
 			"destination": "/apps/nuxt-site/.output/public/:path*"
 		},
